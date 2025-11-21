@@ -21,7 +21,35 @@ Public Class Form1
 
         End Try
 
+    End Sub
 
+    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+
+        Dim query As String = "INSERT INTO `crud_demo_db`.`students_tbl` (`name`, `age`, `email`) VALUES (@name, @age, @email);"
+        Try
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=crud_demo_db;")
+
+                conn.Open()
+                Using cmd As New MySqlCommand(query, conn)
+
+                    cmd.Parameters.AddWithValue("@name", txtName.Text)
+                    cmd.Parameters.AddWithValue("@age", CInt(txtAge.Text))
+                    cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+
+                    cmd.ExecuteNonQuery()
+
+                    MessageBox.Show("Record insert successful!")
+
+                    txtName.Clear()
+                    txtAge.Clear()
+                    txtEmail.Clear()
+
+                End Using
+                '//
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 End Class
