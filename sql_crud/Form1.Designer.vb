@@ -30,6 +30,10 @@ Partial Class Form1
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCreate = New System.Windows.Forms.Button()
+        Me.btnRead = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.txtHiddenID = New System.Windows.Forms.TextBox()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonConnect
@@ -98,12 +102,39 @@ Partial Class Form1
         Me.btnCreate.Text = "CREATE [Insert Data]"
         Me.btnCreate.UseVisualStyleBackColor = True
         '
+        'btnRead
+        '
+        Me.btnRead.Location = New System.Drawing.Point(12, 331)
+        Me.btnRead.Name = "btnRead"
+        Me.btnRead.Size = New System.Drawing.Size(226, 83)
+        Me.btnRead.TabIndex = 8
+        Me.btnRead.Text = "READ [Get Data]"
+        Me.btnRead.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 420)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(720, 231)
+        Me.DataGridView1.TabIndex = 9
+        '
+        'txtHiddenID
+        '
+        Me.txtHiddenID.Location = New System.Drawing.Point(244, 118)
+        Me.txtHiddenID.Name = "txtHiddenID"
+        Me.txtHiddenID.Size = New System.Drawing.Size(180, 20)
+        Me.txtHiddenID.TabIndex = 10
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(490, 333)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(744, 663)
+        Me.Controls.Add(Me.txtHiddenID)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.Label3)
@@ -114,6 +145,7 @@ Partial Class Form1
         Me.Controls.Add(Me.ButtonConnect)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -127,4 +159,7 @@ Partial Class Form1
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents btnCreate As Button
+    Friend WithEvents btnRead As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents txtHiddenID As TextBox
 End Class
