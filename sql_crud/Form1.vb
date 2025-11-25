@@ -81,12 +81,16 @@ Public Class Form1
             Dim selectedRow As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
 
             txtName.Text = selectedRow.Cells("name").Value.ToString()
-            txtName.Text = selectedRow.Cells("age").Value.ToString()
-            txtName.Text = selectedRow.Cells("email").Value.ToString()
+            txtAge.Text = selectedRow.Cells("age").Value.ToString()
+            txtEmail.Text = selectedRow.Cells("email").Value.ToString()
 
             txtHiddenID.Text = selectedRow.Cells("id").Value.ToString()
 
         End If
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
