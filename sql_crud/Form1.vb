@@ -133,7 +133,10 @@ Public Class Form1
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
-        Dim query As String = "DELETE FROM `crud_demo_db`.`students_tbl` WHERE (`id` = @id);"
+        'Dim query As String = "DELETE FROM `crud_demo_db`.`students_tbl` WHERE (`id` = @id);"
+        Dim query As String = "UPDATE `crud_demo_db`.`students_tbl` 
+                                SET is_deleted = 1 
+                                WHERE (`id` = @id);"
 
         Try
             Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=crud_demo_db;")
