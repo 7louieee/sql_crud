@@ -33,6 +33,7 @@ Partial Class Form1
         Me.btnRead = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtHiddenID = New System.Windows.Forms.TextBox()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -131,12 +132,22 @@ Partial Class Form1
         Me.txtHiddenID.Size = New System.Drawing.Size(180, 20)
         Me.txtHiddenID.TabIndex = 10
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(244, 207)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(180, 83)
+        Me.btnUpdate.TabIndex = 11
+        Me.btnUpdate.Text = "UPDATE (Modify Existing Data)"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Maroon
-        Me.ClientSize = New System.Drawing.Size(437, 663)
+        Me.BackColor = System.Drawing.Color.Chocolate
+        Me.ClientSize = New System.Drawing.Size(435, 663)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.txtHiddenID)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnRead)
@@ -167,4 +178,5 @@ Partial Class Form1
     Friend WithEvents btnRead As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents txtHiddenID As TextBox
+    Friend WithEvents btnUpdate As Button
 End Class

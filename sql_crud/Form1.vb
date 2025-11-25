@@ -93,4 +93,14 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+
+        Dim query As String = "UPDATE `crud_demo_db`.`students_tbl` 
+                                SET `age` = @age,
+                                    `name` = @name,
+                                    `email` = @email 
+                                     WHERE (`id` = 'id');"
+
+    End Sub
 End Class
