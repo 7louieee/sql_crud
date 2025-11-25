@@ -100,7 +100,64 @@ Public Class Form1
                                 SET `age` = @age,
                                     `name` = @name,
                                     `email` = @email 
-                                     WHERE (`id` = 'id');"
+                                     WHERE (`id` = @id);"
+
+        Try
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=crud_demo_db;")
+
+                conn.Open()
+                Using cmd As New MySqlCommand(query, conn)
+
+                    cmd.Parameters.AddWithValue("@name", txtName.Text)
+                    cmd.Parameters.AddWithValue("@age", CInt(txtAge.Text))
+                    cmd.Parameters.AddWithValue("@email", txtEmail.Text)
+                    cmd.Parameters.AddWithValue("@id", CInt(txtHiddenID.Text))
+
+                    cmd.ExecuteNonQuery()
+
+                    MessageBox.Show("Record updated successfully!")
+
+                    txtName.Clear()
+                    txtAge.Clear()
+                    txtEmail.Clear()
+                    txtHiddenID.Clear()
+
+                End Using
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+        Dim query As String = "DELETE FROM `crud_demo_db`.`students_tbl` WHERE (`id` = @id);"
+
+        Try
+            Using conn As New MySqlConnection("server=localhost; userid=root; password=root; database=crud_demo_db;")
+
+                conn.Open()
+                Using cmd As New MySqlCommand(query, conn)
+
+                    cmd.Parameters.AddWithValue("@id", CInt(txtHiddenID.Text))
+
+                    cmd.ExecuteNonQuery()
+
+                    MessageBox.Show("Record deleted successfully!")
+
+                    txtName.Clear()
+                    txtAge.Clear()
+                    txtEmail.Clear()
+                    txtHiddenID.Clear()
+
+                End Using
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 End Class

@@ -34,16 +34,17 @@ Partial Class Form1
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtHiddenID = New System.Windows.Forms.TextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonConnect
         '
-        Me.ButtonConnect.BackColor = System.Drawing.Color.Ivory
-        Me.ButtonConnect.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ButtonConnect.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonConnect.ForeColor = System.Drawing.Color.Green
         Me.ButtonConnect.Location = New System.Drawing.Point(12, 12)
         Me.ButtonConnect.Name = "ButtonConnect"
-        Me.ButtonConnect.Size = New System.Drawing.Size(226, 83)
+        Me.ButtonConnect.Size = New System.Drawing.Size(411, 83)
         Me.ButtonConnect.TabIndex = 0
         Me.ButtonConnect.Text = "Connect My SQL"
         Me.ButtonConnect.UseVisualStyleBackColor = False
@@ -51,7 +52,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label1.Location = New System.Drawing.Point(9, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 13)
@@ -75,7 +76,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label2.Location = New System.Drawing.Point(9, 147)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(32, 13)
@@ -92,7 +93,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label3.Location = New System.Drawing.Point(9, 173)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 13)
@@ -101,6 +102,7 @@ Partial Class Form1
         '
         'btnCreate
         '
+        Me.btnCreate.ForeColor = System.Drawing.Color.Green
         Me.btnCreate.Location = New System.Drawing.Point(12, 207)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(226, 83)
@@ -110,6 +112,7 @@ Partial Class Form1
         '
         'btnRead
         '
+        Me.btnRead.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnRead.Location = New System.Drawing.Point(12, 331)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(226, 83)
@@ -134,6 +137,7 @@ Partial Class Form1
         '
         'btnUpdate
         '
+        Me.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnUpdate.Location = New System.Drawing.Point(244, 207)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(180, 83)
@@ -141,12 +145,23 @@ Partial Class Form1
         Me.btnUpdate.Text = "UPDATE (Modify Existing Data)"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'btnDelete
+        '
+        Me.btnDelete.ForeColor = System.Drawing.Color.Red
+        Me.btnDelete.Location = New System.Drawing.Point(244, 331)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(180, 83)
+        Me.btnDelete.TabIndex = 12
+        Me.btnDelete.Text = "DELETE (Delete Existing)"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Chocolate
+        Me.BackColor = System.Drawing.Color.LightYellow
         Me.ClientSize = New System.Drawing.Size(435, 663)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.txtHiddenID)
         Me.Controls.Add(Me.DataGridView1)
@@ -179,4 +194,5 @@ Partial Class Form1
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents txtHiddenID As TextBox
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnDelete As Button
 End Class
