@@ -45,7 +45,7 @@ Public Class Form1
                     txtEmail.Clear()
 
                 End Using
-                '//
+
             End Using
         Catch ex As Exception
             MsgBox(ex.Message)
